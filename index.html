@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="imagens/abelha.png" type="image/png">
+
+    <title>KanaBee</title>
+</head>
+<body>
+    <nav class="nav-container">
+        <div class="div-buttons">
+            <a href="https://github.com/Sarinha09" target="_blank" class="github-button">  <img src="imagens/github.png" alt="GitHub" class="icon-github">GitHub</a>
+        </div>
+    </nav>
+
+
+    <div class="container-projetos">
+
+        <div class="container-filter">
+            <button data-translate="hiragana" class="buttonSelection" onclick="setActive(this); filterProjects('hiragana')">
+                <span class="button-text">Hiragana</span>
+            </button>
+
+            <button data-translate="katakana" class="buttonSelection" onclick="setActive(this); filterProjects('katakana')">
+                <span class="button-text">Katakana</span>
+            </button>
+
+            <button data-translate="all" class="buttonSelection" onclick="setActive(this); filterProjects('all')">
+                <span class="button-text">Ambos</span>
+            </button>
+
+        </div>
+    
+        <div class="p-container">
+            <div class="select-all-container">
+                <input type="checkbox" id="selectAllCheckbox" onchange="toggleSelectAll()">
+                <label for="selectAllCheckbox" id="selectAllLabel" data-translate="select">Selecionar Todos</label>
+            </div>
+
+             <!-- a i u e o -->
+            <div class="p-container-row">
+                <label class="custom-checkbox">
+                    <input type="checkbox" class="row-checkbox" onchange="toggleRowSelection(this)">
+                    <span class="checkmark"></span>
+                </label>
+                
+                <div class="p-container-cards">
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">あ</span>
+                    </button>
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">え</span>
+                    </button>
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">い</span>
+                    </button>
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">お</span>
+                    </button>
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">う</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- ka ki ku ke ko -->
+            <div class="p-container-row">
+                <label class="custom-checkbox">
+                    <input type="checkbox" class="row-checkbox" onchange="toggleRowSelection(this)">
+                    <span class="checkmark"></span>
+                </label>
+                <div class="p-container-cards">
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">か</span>
+                    </button>
+
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">き</span>
+                    </button>
+
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">く</span>
+                    </button>
+
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">け</span>
+                    </button>
+
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">こ</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- sa shi su se so -->
+            <div class="p-container-row">
+                <label class="custom-checkbox">
+                    <input type="checkbox" class="row-checkbox" onchange="toggleRowSelection(this)">
+                    <span class="checkmark"></span>
+                </label>
+                <div class="p-container-cards">
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">さ</span>
+                    </button>
+
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">し</span>
+                    </button>
+
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">す</span>
+                    </button>
+
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">せ</span>
+                    </button>
+
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">そ</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- ta chi tsu te to -->
+            <div class="p-container-row">
+                <label class="custom-checkbox">
+                    <input type="checkbox" class="row-checkbox" onchange="toggleRowSelection(this)">
+                    <span class="checkmark"></span>
+                </label>
+                <div class="p-container-cards">
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">た</span>
+                    </button>
+
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">ち</span>
+                    </button>
+
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">つ</span>
+                    </button>
+
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">て</span>
+                    </button>
+
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">と</span>
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- na ni nu ne no -->
+            <div class="p-container-row">
+                <label class="custom-checkbox">
+                    <input type="checkbox" class="row-checkbox" onchange="toggleRowSelection(this)">
+                    <span class="checkmark"></span>
+                </label>
+                <div class="p-container-cards">
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">な</span>
+                    </button>
+
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">に</span>
+                    </button>
+
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">ぬ</span>
+                    </button>
+
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">ね</span>
+                    </button>
+
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">の</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- ma mi mu me mo-->
+            <div class="p-container-row">
+                <label class="custom-checkbox">
+                    <input type="checkbox" class="row-checkbox" onchange="toggleRowSelection(this)">
+                    <span class="checkmark"></span>
+                </label>
+                <div class="p-container-cards">
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">ま</span>
+                    </button>
+
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">み</span>
+                    </button>
+
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">む</span>
+                    </button>
+
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">め</span>
+                    </button>
+
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">も</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- ha hi fu he ho -->
+            <div class="p-container-row">
+                <label class="custom-checkbox">
+                    <input type="checkbox" class="row-checkbox" onchange="toggleRowSelection(this)">
+                    <span class="checkmark"></span>
+                </label>
+                <div class="p-container-cards">
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">は</span>
+                    </button>
+
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">ひ</span>
+                    </button>
+
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">ふ</span>
+                    </button>
+
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">へ</span>
+                    </button>
+
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">ほ</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- ya yu yo -->
+            <div class="p-container-row">
+                <label class="custom-checkbox">
+                    <input type="checkbox" class="row-checkbox" onchange="toggleRowSelection(this)">
+                    <span class="checkmark"></span>
+                </label>
+                <div class="p-container-cards">
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">や</span>
+                    </button>
+
+                    <button class="hiragana-card" data-filter="hiragana">
+                        <span class="button-text2"></span>
+                    </button>
+
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">ゆ</span>
+                    </button>
+
+                    <button class="hiragana-card"  data-filter="hiragana">
+                        <span class="button-text2"></span>
+                    </button>
+
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">よ</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- ra ri ru re ro -->
+            <div class="p-container-row">
+                <label class="custom-checkbox">
+                    <input type="checkbox" class="row-checkbox" onchange="toggleRowSelection(this)">
+                    <span class="checkmark"></span>
+                </label>
+                <div class="p-container-cards">
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">ら</span>
+                    </button>
+
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">り</span>
+                    </button>
+
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">る</span>
+                    </button>
+
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">れ</span>
+                    </button>
+
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">ろ</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- wa wo -->
+            <div class="p-container-row">
+                <label class="custom-checkbox">
+                    <input type="checkbox" class="row-checkbox" onchange="toggleRowSelection(this)">
+                    <span class="checkmark"></span>
+                </label>
+                <div class="p-container-cards">
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">わ</span>
+                    </button>
+
+                    <button class="hiragana-card" data-filter="hiragana">
+                        <span class="button-text2"></span>
+                    </button>
+
+                    <button class="hiragana-card"  data-filter="hiragana">
+                        <span class="button-text2"></span>
+                    </button>
+
+                    <button class="hiragana-card" data-filter="hiragana">
+                        <span class="button-text2"></span>
+                    </button>
+
+                    <button class="hiragana-card" onclick="toggleSelection(this)" data-filter="hiragana">
+                        <span class="button-text2">を</span>
+                    </button>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="quiz">
+            <button data-translate="start" onclick="startQuiz()" class="button-text" id="start-quiz-btn">Iniciar</button>
+            
+            <!-- Seção do Quiz  -->
+            <div id="quiz-section">
+                <p id="question"></p>
+                <div class="input">
+                    <input type="text" id="answer-input" data-translate="answer" placeholder="Sua resposta">
+                    <button id="btn-ok" onclick="submitAnswer()"></button>
+                </div>
+            </div>
+    
+            <!-- Resultado Final -->
+            <div id="quiz-result" style="display: none;"></div>
+        </div>
+
+    </div>
+   
+
+
+    <button class="buttonbandeira" onclick="toggleMenu()">
+        <img src="imagens/brasilPixel.png" class="icon-idiomas" id="current-flag" alt="Ícone de Idiomas">
+    </button>
+
+    <div class="language-menu" id="language-menu">
+        <button class="language-option" onclick="changeLanguage('brasil')">
+            <img src="imagens/brasilPixel.png"  class="icon-idiomas" salt="Português"> 
+            <div class="language-text">PT</div>
+        </button>
+
+        <button class="language-option" onclick="changeLanguage('eua')">
+            <img src="imagens/euaPixel.png"  class="icon-idiomas" alt="Inglês">
+            <div class="language-text">EN</div>
+        </button>
+
+        <button class="language-option" onclick="changeLanguage('jp')">
+            <img src="imagens/jpPixel.png"  class="icon-idiomas" alt="japonês">
+            <div class="language-text">JP</div>
+        </button>
+    </div>
+
+    <footer>
+        <h1 data-translate="copy">&copy 2024 Sara Dutra. Todos os direitos reservados.</h1>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="start.js"></script>
+    <audio id="correct-sound" src="audio/correct.wav"></audio>
+    <audio id="wrong-sound" src="audio/errou.wav"></audio>
+    <audio id="click-sound" src="audio/click.mp3"></audio>
+</body>
+</html>
